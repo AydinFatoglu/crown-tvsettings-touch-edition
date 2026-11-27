@@ -13,6 +13,7 @@ PlatformKeys/
 
 # Generated build and audit directories
 TouchFix_V1_4_7_*/
+TouchFix_V1_4_8_*/
 decoded/
 verified_decoded/
 Patch_Audit/
