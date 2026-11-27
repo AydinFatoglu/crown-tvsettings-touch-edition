@@ -111,4 +111,3 @@ These tags help trace discovery decisions, visible-list updates, LE routing, and
 ## Scope
 
 This is a version-pinned maintenance build, not a general-purpose APK patcher. Its exact hashes, Smali anchors, target classes, signer identity, and device allowlist are intentional safeguards for one inspected Crown TvSettings lineage. A different base APK should be analyzed and supported as a separate version rather than forced through this pipeline.
-

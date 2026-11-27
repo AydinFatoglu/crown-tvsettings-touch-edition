@@ -1333,7 +1333,7 @@ class CrownCleanZip {
             require(entries.containsKey("AndroidManifest.xml")&&entries.containsKey("classes.dex"),"Missing original manifest/DEX");
             for(ZipEntry e:entries.values()) {
                 byte[] b=read(src,e);
-                
+
                 if(e.getName().equals("classes.dex")) b=read(dex,dex.getEntry("classes.dex"));
                 put(out,e,b);
             }
@@ -1346,7 +1346,7 @@ class CrownCleanZip {
             int changed=0;
             for(String n:a.keySet()) {
                 byte[] orig=read(src,a.get(n)), actual=read(result,b.get(n)), expected=orig;
-                
+
                 if(n.equals("classes.dex")) expected=read(dex,dex.getEntry(n));
                 require(Arrays.equals(actual,expected),"Unexpected entry contents: "+n);
                 if(!Arrays.equals(orig,actual)) changed++;
