@@ -3,7 +3,17 @@
 Reproducible PowerShell build pipeline for **Crown TvSettings Touch Edition v1.4.7**. It applies a narrowly scoped Bluetooth accessory discovery and pairing patch to the verified v1.4.6 APK, rebuilds only the application DEX, signs the result with the supplied platform key, and performs extensive integrity checks before producing a candidate APK.
 
 > [!IMPORTANT]
-> This repository contains the build script only. It does not include Crown firmware, APK files, Android platform keys, or Apktool. Use it only with software and signing material you are authorized to modify.
+> The Git source tree contains the build script only. It does not include Crown firmware, Android platform keys, or Apktool. An authorized prebuilt APK is available separately on the Releases page. Use it only with devices and software you are authorized to modify.
+
+## Download
+
+The verified v1.4.7 APK is available from the [latest GitHub release](https://github.com/AydinFatoglu/crown-tvsettings-touch-edition/releases/latest).
+
+```text
+SHA-256: F9187D4B9AE64DDA4F0676C80E0EE81AA88B6354B548E5FA789E35D167E44C57
+```
+
+The release APK is platform-signed for the inspected Crown firmware lineage. Test it as an APK update before considering system-image integration.
 
 ## What v1.4.7 changes
 
