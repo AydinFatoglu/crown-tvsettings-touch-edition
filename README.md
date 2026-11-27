@@ -15,6 +15,20 @@ SHA-256: F9187D4B9AE64DDA4F0676C80E0EE81AA88B6354B548E5FA789E35D167E44C57
 
 The release APK is platform-signed for the inspected Crown firmware lineage. Test it as an APK update before considering system-image integration.
 
+## Troubleshooting
+
+### Android TV HOME and touch navigation
+
+On the tested Amazon Echo Show 8 Gen 1 (`crown`) configuration, enabling Android TV mode requires one device-level post-configuration step so WindowManager recognizes TV user setup as complete:
+
+```shell
+adb shell settings --user 0 put secure tv_user_setup_complete 1
+```
+
+Without this flag, HOME and touch navigation may fail even when the normal Android setup flags and launcher configuration are correct. See [Android TV HOME and Touch Navigation Fix](docs/android-tv-home-navigation-fix.md) for symptoms, diagnosis, Logcat evidence, verification, physical-device results, and rollback instructions.
+
+This device setting is separate from the Crown TvSettings Touch Edition v1.4.7 Bluetooth APK patch. Persistence after a full device reboot has not yet been tested.
+
 ## What v1.4.7 changes
 
 - Shows accessory devices instead of every nearby Bluetooth device.
@@ -114,6 +128,8 @@ These tags help trace discovery decisions, visible-list updates, LE routing, and
 ```text
 .
 |-- Build_Crown_TvSettings_TouchEdition_V1_4_7.ps1
+|-- docs/
+|   `-- android-tv-home-navigation-fix.md
 |-- README.md
 `-- .gitignore
 ```
